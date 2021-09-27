@@ -2169,6 +2169,13 @@ textarea.form-control {
     border-radius: 0.25rem;
 }
 
+@media (max-width:812px) {
+    #expPro {
+        font-size: 1rem;
+        color: red;
+    }
+}
+
 .form-row>.col>.valid-tooltip,
 .form-row>[class*=col-]>.valid-tooltip {
     left: 5px;
