@@ -1,10 +1,9 @@
-
-
 <template>
-  <div class="ici">
+  <div>
     Page: index
-    <FirstPart/>
+    <FirstPart />
   </div>
+
 </template>
 
 <script lang="ts" setup>
