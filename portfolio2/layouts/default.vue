@@ -1,9 +1,11 @@
-<script lang="ts" setup></script>
 
 <template>
+<div‡>
+</div>
   <div>
-    Layout: default
-    <slot />
+    <section>
+      <slot />
+    </section>
   </div>
 </template>
 
