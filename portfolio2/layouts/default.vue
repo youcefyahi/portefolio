@@ -1,8 +1,6 @@
 
 <template>
-<div class="flex">
-  <PreviousButton/>
-  <NextButton />
+<div‡>
 </div>
   <div>
     <section>
