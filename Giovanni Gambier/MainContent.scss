@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+// Variables pour les styles
+$nav-background-color: #f8f8f8;
+$nav-text-color: #333;
+$nav-link-hover-bg: #495154c9;
+$nav-link-hover-color: #fff;
+$nav-font-size: 16px;
+$nav-padding: 1rem;
+$nav-margin-bottom: 2rem;
+$nav-text-padding: 0.5rem;
+$nav-text-align: center;
+$title-font-size: 1.6rem;
+$title-margin: 0.5rem 0;
+$grid-gap: 2rem;
+
+// NavBar Secondaire
+.secondary-nav {
+  font-family: 'Playfair Display', serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: $nav-text-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: $nav-padding;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  margin-bottom: $nav-margin-bottom;
+
+  .nav-description {
+    margin: 0;
+    color: white;
+    font-size: $nav-font-size;
+    text-align: $nav-text-align;
+    padding: $nav-text-padding;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: underline;
+    color: #b26943;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-top: 1.2rem;
+    padding: 0;
+    width: 100%;
+
+    li {
+      margin: 0 1rem;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+
+        &:hover {
+          transition: all 0.4s ease;
+          background-color: #ed8936;
+          color: $nav-link-hover-color;
+        }
+      }
+    }
+  }
+}
+
+.main-section {
+  background-color: #f3f4f6;
+
+  h2 {
+    color: white !important;
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+    background-color: #333;
+    border: 2px solid white !important;
+    padding: 50px;
+  }
+}
+
+.custom-carousel {
+  padding: 10px;
+  overflow: visible;
+  transform: translateY(20px);
+  //animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.custom-carousel .react-multi-carousel-item {
+  margin: 0 20px;
+  /* Espace horizontal entre les cartes */
+}
+
+/*Responsive carousel - Fin*/
+
+// Sections principales
+.title-main-content,
+.title-main-content-air,
+.title-main-content-holiday {
+  text-align: center;
+  margin: $title-margin;
+  opacity: 0;
+}
+
+
+.product-grid{
+  margin-bottom: 100px;
+}
+
+.product-grid,
+.product-grid-air,
+.product-grid-holiday {
+  height: 500px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive design pour la NavBar
+@media (max-width: 768px) {
+  .secondary-nav {
+    padding: 0.5rem;
+
+    .nav-description {
+      font-size: 14px;
+      padding: 0.5rem;
+    }
+
+    ul {
+      flex-direction: column;
+
+      li {
+        margin: 0.5rem 0;
+
+        a {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .main-section {
+    h2 {
+      margin-bottom: 50px !important;
+      margin-top: 50px !important;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .secondary-nav {
+    padding: 0.25rem;
+
+    .nav-description {
+      font-size: 12px;
+      padding: 0.25rem;
+    }
+
+    ul {
+      flex-direction: column;
+
+      li {
+        margin: 0.25rem 0;
+
+        a {
+          padding: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+
+@media (max-width: 768px) {
+
+  .product-grid>.product-card,
+  .product-grid-air>.product-card,
+  .product-grid-holiday>.product-card {
+    flex: 1 1 calc(50% - $grid-gap);
+    max-width: calc(50% - $grid-gap);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .product-grid>.product-card,
+  .product-grid-air>.product-card,
+  .product-grid-holiday>.product-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+// Flèche de retour en haut
+.scroll-container {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.scroll-to-top {
+  width: 55px;
+  height: 55px;
+  background-color: #495154c9;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  opacity: 0.7;
+  transition:
+    background-color 0.3s ease,
+    opacity 0.3s ease;
+  visibility: hidden;
+
+  &.visible {
+    visibility: visible;
+  }
+
+  &:hover {
+    background-color: #333;
+  }
+}
+
+// Responsive design pour la flèche
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    background-color: #35393be0;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
